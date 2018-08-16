@@ -1,0 +1,5 @@
+Inicio
+  creaIcono("AB,7,24")
+  mueveIcono("AB",.48,13)
+  relacionaIcono("AB","DE")
+Fin
