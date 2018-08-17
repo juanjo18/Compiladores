@@ -42,8 +42,10 @@ public class GUIBrowse extends JFrame implements ActionListener
 		tfCode.setEditable(true);
 		spCode = new JScrollPane(tfCode);
 		tfMsgs = new JTextArea("");
+		tfMsgs.setBackground(Color.DARK_GRAY);
+		
 		spMsgs = new JScrollPane(tfMsgs);
-		tfMsgs.setEditable(false);
+	
 
 		pMenu.add(btLoad);
 		pMenu.add(btPlay);
@@ -91,24 +93,34 @@ public class GUIBrowse extends JFrame implements ActionListener
 			    }
 			}
 			
-			System.out.println(tfCode.getText());
-			 
 		}
+		
 		if(e.getSource() == btPlay)
-		{
-			System.out.println(":P 2");
+		{	
+			String cad = tfCode.getText();
+			Interprete in = new Interprete(cad);
+			in.analize();
+			
+			//in.checaPalarbas();
+			//in.checaParametros();
+			
+			
+
 		}
 		if(e.getSource() == btReset)
 		{
 			tfCode.setText("");
+			tfMsgs.setText("");
+			
 		}
 	}
+	
 
 	public static void main(String [] args)
 	{
 		GUIBrowse guI = new GUIBrowse();
 		guI.setVisible(true);
-		guI.setSize(400, 300);
+		guI.setSize(400, 350);
 		guI.setDefaultCloseOperation(guI.EXIT_ON_CLOSE);
 	}
 }

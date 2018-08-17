@@ -2,48 +2,52 @@ package main;
 
 import java.util.ArrayList;
 
-public class Simbolos {
+public class Simbolos
+{
 	private String simbolo;
 	private String tipo;
-	private ArrayList<Integer> parametros = new ArrayList<Integer>();
+	private ArrayList<Integer> parametros;
 	
-	public Simbolos(String simbolo, String tipo, ArrayList<Integer> parametros) {
+	public Simbolos(String simbolo, String tipo) 
+	{
 		this.simbolo = simbolo;
 		this.tipo = tipo;
-		this.parametros = parametros;
-	}
-	
-	public Simbolos(String simbolo, String tipo) {
-		this.simbolo = simbolo;
-		this.tipo = tipo;
-		this.parametros = null;
+		this.parametros = new ArrayList<Integer>();
 	}
 
-	public String getSimbolo() {
+	public String getSimbolo() 
+	{
 		return simbolo;
 	}
 
-	public void setSimbolo(String simbolo) {
+	public void setSimbolo(String simbolo)
+	{
 		this.simbolo = simbolo;
 	}
 
-	public String getTipo() {
+	public String getTipo() 
+	{
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
+	public void setTipo(String tipo)
+	{
 		this.tipo = tipo;
 	}
 
-	public ArrayList<Integer> getParametros() {
-		return parametros;
+	public int getParametro(int indice) 
+	{
+		return parametros.get(indice);
 	}
 
-	public void setParametros(int n) {
+	public void agregaParametro(int n) 
+	{
 		parametros.add(n);
 	}
 	
-	
-	
-	
+	public int getTamano()
+	{
+		return this.parametros.size();
+	}
+		
 }
